@@ -1,11 +1,10 @@
 import React from 'react'
 
-function App() {
+export default function App() {
   return (
-    <div>
-      Heloooooooo
-     </div>
-  )
+    <div className="test">
+      <h1>Tailwind is working! 🎉</h1>
+    </div>
+  );
 }
 
-export default App
