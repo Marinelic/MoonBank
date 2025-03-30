@@ -11,7 +11,7 @@
     #6d6d6d -78.47%,
     #1d1210 91.61%
   );
-  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+  --card-shadow: 0px 20px 100px -10px rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -64,7 +64,7 @@
 }
 
 .bg-discount-gradient {
-  background: linear-gradient(#1d242c 0%, #ab8e4a 100%);
+  background: linear-gradient(#040505 0%, #cfbd52 100%);
 }
 
 .box-shadow {
@@ -101,7 +101,7 @@
 }
 
 .feature-card:hover {
-  background: var(--black-gradient);
+  background: #45718b;
   box-shadow: var(--card-shadow);
 }
 
