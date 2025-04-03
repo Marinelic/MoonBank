@@ -8,10 +8,9 @@
   --black-gradient: linear-gradient(
     144.39deg,
     #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #1d1210 91.61%
+    #f5d94b75 -78.47%
   );
-  --card-shadow: 20px 20px 80px -10px rgba(251, 255, 0, 0.1);
+  --card-shadow: 20px 20px 80px -10px rgba(238, 223, 157, 0.329);
 }
 
 * {
@@ -50,8 +49,8 @@
   background: linear-gradient(
     -168.39deg,
     #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
+    #ebf7b9 -78.47%,
+    #b4b21d 91.61%
   );
 }
 
@@ -114,7 +113,8 @@
 }
 
 .feedback-card:hover {
-  background: var(--black-gradient);
+  background: #45718b;
+  box-shadow: var(--card-shadow);
 }
 
 .blue__gradient {
