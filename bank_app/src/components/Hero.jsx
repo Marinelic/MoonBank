@@ -5,7 +5,6 @@ const Hero = () => (
   <section
     id="home"
     className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-24" 
-    // 👆 pt-24 (6rem) pushes content below the navbar
   >
     {/* Background Video */}
     <video
