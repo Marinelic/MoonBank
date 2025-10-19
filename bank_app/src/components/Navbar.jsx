@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
+import call from "../assets/call.svg";
 
 function Navbar() {
   const [toggle, setToggle] = useState(false);
@@ -16,19 +17,29 @@ function Navbar() {
           </h1>
         </div>
 
-        {/* Desktop Menu */}
-        <ul className="hidden sm:flex space-x-10">
-          {navLinks.map((nav) => (
-            <li key={nav.id}>
-              <a
-                href={`#${nav.id}`}
-                className="text-gray-200 hover:text-yellow-400 transition-colors duration-300 font-medium text-[16px]"
-              >
-                {nav.title}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {/* Desktop Menu + Call */}
+        <div className="hidden sm:flex items-center space-x-6">
+          <ul className="flex space-x-10">
+            {navLinks.map((nav) => (
+              <li key={nav.id}>
+                <a
+                  href={`#${nav.id}`}
+                  className="text-gray-200 hover:text-yellow-400 transition-colors duration-300 font-medium text-[16px]"
+                >
+                  {nav.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Call Icon (desktop) */}
+          <a
+            href="tel:+1234567890"
+            className="hidden sm:flex absolute right-10 items-center text-white hover:text-yellow-400 transition-colors duration-300"
+          >
+            <img src={call} alt="call" className="w-6 h-6" />
+          </a>
+        </div>
 
         {/* Mobile Menu Icon */}
         <div className="sm:hidden flex items-center">
@@ -56,6 +67,14 @@ function Navbar() {
                 </li>
               ))}
             </ul>
+
+            {/* Call button on mobile */}
+            <a
+              href="tel:+1234567890"
+              className="mt-4 flex items-center justify-center text-yellow-400 hover:text-yellow-300"
+            >
+              <img src={call} alt="call" className="w-6 h-6 mr-2" /> Call Us
+            </a>
           </div>
         )}
       </div>

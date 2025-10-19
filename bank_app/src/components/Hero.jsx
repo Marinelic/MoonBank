@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import GetStarted from "./GetStarted";
 import BgSpace from "../assets/bg-space.mp4";
 
 const Hero = () => (
   <section
     id="home"
-    className="w-full min-h-screen flex items-center justify-center overflow-hidden"
+    className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-24" 
+    // 👆 pt-24 (6rem) pushes content below the navbar
   >
     {/* Background Video */}
     <video
@@ -25,12 +25,11 @@ const Hero = () => (
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="relative z-10 flex flex-col items-center text-center px-6 sm:px-16 
-                 max-w-3xl pb-30"
+      className="relative z-10 flex flex-col items-center text-center px-6 sm:px-16 max-w-3xl"
     >
       {/* Badge */}
       <div className="py-[6px] px-4 bg-gradient-to-r from-yellow-500/20 to-transparent 
-                      border border-yellow-400/40 rounded-full mb-2 w-fit backdrop-blur-sm">
+                      border border-yellow-400/40 rounded-full mb-6 w-fit backdrop-blur-sm">
         <p className="text-sm text-gray-200 font-medium">
           <span className="text-yellow-400 font-semibold">Limited Offer:</span>{" "}
           Enjoy <span className="text-yellow-400 font-semibold">20% Off</span>{" "}
@@ -59,9 +58,9 @@ const Hero = () => (
       </p>
 
       {/* Button */}
-      {/* <div className="mt-10 sm:mt-12">
-        <GetStarted />
-      </div> */}
+      <button className="bg-yellow-500 font-semibold text-grey-800 text-sm sm:text-base px-8 py-4 rounded-full shadow-md hover:bg-orange-400 transition mt-4 sm:mt-6">
+          Get Started
+      </button>
     </motion.div>
   </section>
 );
