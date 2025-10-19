@@ -1,51 +1,69 @@
-import styles from "../style";
-import { discount, robot } from "../assets";
-import GetStarted from './GetStarted';
+import { motion } from "framer-motion";
+import GetStarted from "./GetStarted";
+import BgSpace from "../assets/bg-space.mp4";
 
 const Hero = () => (
- <section id="home" className={`flex md:flex-row flex-col py-6`}>
-    <div className={`flex-1 pt-12 flex-col xl:px-0 sm:16 px-4`}>
-      <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
-        <img src={discount} alt="discount" className="w-[32px] h-[32px]" />
+  <section
+    id="home"
+    className="w-full min-h-screen flex items-center justify-center overflow-hidden"
+  >
+    {/* Background Video */}
+    <video
+      autoPlay
+      loop
+      muted
+      className="absolute top-0 left-0 w-full h-full object-cover object-center z-0"
+    >
+      <source src={BgSpace} type="video/mp4" />
+    </video>
 
-        <p className={`${styles.paragraph} ml-2 text-black`}>
-          <span className="text-white">20%</span> Discount For {" "}
-          <span className="text-white">1 Month</span> Account
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-black/50 z-0" />
+
+    {/* Centered Content */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="relative z-10 flex flex-col items-center text-center px-6 sm:px-16 
+                 max-w-3xl pb-30"
+    >
+      {/* Badge */}
+      <div className="py-[6px] px-4 bg-gradient-to-r from-yellow-500/20 to-transparent 
+                      border border-yellow-400/40 rounded-full mb-2 w-fit backdrop-blur-sm">
+        <p className="text-sm text-gray-200 font-medium">
+          <span className="text-yellow-400 font-semibold">Limited Offer:</span>{" "}
+          Enjoy <span className="text-yellow-400 font-semibold">20% Off</span>{" "}
+          for your first month
         </p>
       </div>
 
-      <div className="flex flex-row justify-between items-center w-full">
-        <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[100px] leading-[75px] pt-8">
-          The Future of <br className="sm:block hidden" /> {" "} 
-          <span className="text-gradient">Banking</span> {" "} is Here.
-        </h1>  
-
-        <div className="ss:flex hidden md:mr-4 mr-0">
-          <GetStarted />
-        </div>
-      </div>
-
-      <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100px] leading-[75px] w-full">
-        Seamless. Secure. Limitless.
+      {/* Heading */}
+      <h1 className="font-poppins font-semibold text-white text-[42px] sm:text-[68px] leading-tight">
+        The Next Generation of{" "}
+        <span className="bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent">
+          Banking
+        </span>
+        .
       </h1>
 
-     <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        Say goodbye to outdated banking. Experience instant transactions, AI-powered insights, and financial freedom—all in one place.
-    </p>
-    </div>
+      {/* Subheading */}
+      <h2 className="font-poppins font-semibold text-white text-[28px] sm:text-[44px] leading-tight mt-3">
+        Smart. Secure. Effortless.
+      </h2>
 
-    <div className={`flex-1 flex ${styles.flexCenter} md:my-0 m-10 relative py-6 pt-0`}>
-      <img src={robot} alt="billing" className="w-[90%] h-[90%] relative z-[5] pt-0 m-0" />
+      {/* Paragraph */}
+      <p className="text-gray-300 text-[16px] sm:text-[18px] max-w-[480px] mt-6 leading-relaxed">
+        Experience intelligent banking designed for the modern world — instant
+        transactions, real-time insights, and total control, all in one place.
+      </p>
 
-      <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />
-        <div className="absolute z-[1] w-[80%] h-[80%] rounded-full white__gradient bottom-40" />
-        <div className="absolute z-[0] w-[50%] h-[50%] right-40 bottom-30 blue__gradient" />
-    </div>
-
-    <div className={`ss:hidden ${styles.flexCenter}`}>
+      {/* Button */}
+      {/* <div className="mt-10 sm:mt-12">
         <GetStarted />
-      </div>
+      </div> */}
+    </motion.div>
   </section>
-)
+);
 
-export default Hero
+export default Hero;
