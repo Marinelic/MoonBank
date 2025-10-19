@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import BgSpace from "../assets/bg-space.mp4";
 
 const Hero = () => (
   <section
@@ -13,7 +12,7 @@ const Hero = () => (
       muted
       className="absolute top-0 left-0 w-full h-full object-cover object-center z-0"
     >
-      <source src={BgSpace} type="video/mp4" />
+      <source src="/bg-space.mp4" type="video/mp4" />
     </video>
 
     {/* Overlay */}
