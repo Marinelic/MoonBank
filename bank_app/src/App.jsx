@@ -14,7 +14,7 @@ import {
 
 export default function App() {
   return (
-    <div className="bg-primary w-full overflow-hidden">
+    <div className=" w-full overflow-hidden">
       {/* Navbar */}
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
@@ -22,10 +22,8 @@ export default function App() {
         </div>
       </div>
 
-      {/* Hero (FULL WIDTH, no boxWidth limit) */}
       <Hero />
 
-      {/* Rest of sections (inside boxWidth again) */}
       <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Stats />
