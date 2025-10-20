@@ -18,7 +18,7 @@ function Navbar() {
         </div>
 
         {/* Desktop Menu + Call */}
-        <div className="hidden sm:flex items-center space-x-6">
+        <div className="hidden sm:flex items-center space-x-8">
           <ul className="flex space-x-10">
             {navLinks.map((nav) => (
               <li key={nav.id}>
@@ -35,7 +35,7 @@ function Navbar() {
           {/* Call Icon (desktop) */}
           <a
             href="tel:+1234567890"
-            className="hidden sm:flex absolute right-10 items-center text-white hover:text-yellow-400 transition-colors duration-300"
+            className="hidden sm:flex right-10 items-center text-white hover:text-yellow-400 transition-colors duration-300 ml-4"
           >
             <img src={call} alt="call" className="w-6 h-6" />
           </a>
