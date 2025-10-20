@@ -55,11 +55,7 @@
 }
 
 .bg-gray-gradient {
-  background: linear-gradient(rgb(255, 255, 255) -341.94%, #25212d 80%);
-}
-
-.bg-discount-gradient {
-  background: linear-gradient(#040505 0%, #cfbd52 100%);
+  background: linear-gradient(#944212 0%, #f9ee93 10%) !important;
 }
 
 .box-shadow {

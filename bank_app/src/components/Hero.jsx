@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Button from "./Button";
 
 const Hero = () => (
   <section
@@ -56,9 +57,9 @@ const Hero = () => (
       </p>
 
       {/* Button */}
-      <button className="bg-yellow-500 font-semibold text-grey-800 text-sm sm:text-base px-8 py-4 rounded-full shadow-md hover:bg-orange-400 transition mt-4 sm:mt-6">
-          Get Started
-      </button>
+       <div className="mt-10">
+            <Button styles="bg-gradient-to-r from-yellow-400 to-yellow-300 text-black font-semibold shadow-md hover:shadow-yellow-400/20 transition-all duration-300" />
+          </div>
     </motion.div>
   </section>
 );

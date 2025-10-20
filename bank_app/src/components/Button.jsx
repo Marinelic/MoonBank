@@ -1,10 +1,14 @@
 import React from 'react'
-import styles from '../style'
 
-const Button = () => (
-    <button type='button' className={`py-4 px-6 bg-discount-gradient fon-poppins font-medium text-[18px] text-white outline-none rounded-[10px]`}>
-      Get Started
-    </button>
+const Button = ({ styles }) => (
+  <button
+    type="button"
+    style={{ background: 'linear-gradient( #b46123 0%, #faefa1 100%)' }}
+    className={`py-4 px-6 font-poppins font-medium text-[18px] text-black outline-none rounded-[10px] ${styles}`}
+  >
+    Get Started
+  </button>
 )
+
 
 export default Button

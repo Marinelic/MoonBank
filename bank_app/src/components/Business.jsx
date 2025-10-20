@@ -11,11 +11,11 @@ const FeatureCard = ({ icon, title, content, index }) => (
     transition={{ duration: 0.5, delay: index * 0.15 }}
     className={`flex flex-row p-6 rounded-[16px] ${
       index !== features.length - 1 ? "mb-6" : "mb-0"
-    } feature-card bg-[#0e1829]/40 border border-[#1a2b45]/40 backdrop-blur-md hover:bg-[#18243a]/60 transition-all duration-300`}
+    } feature-card border border-[#1a2b45]/40 backdrop-blur-md hover:bg-[#18243a]/30 transition-all duration-300`}
   >
     {/* Icon */}
     <div
-      className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-gradient-to-br from-yellow-500/80 to-yellow-300/40 shadow-lg shadow-yellow-400/10`}
+      className={`w-[60px] h-[60px] rounded-full ${styles.flexCenter} bg-gradient-to-br from-yellow-200/80 to-yellow-300/40 shadow-lg shadow-yellow-400/10`}
     >
       <img src={icon} alt="icon" className="w-[50%] h-[50%] object-contain" />
     </div>
@@ -47,7 +47,7 @@ function Business() {
       <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start justify-between gap-12 px-6 sm:px-12">
 
         {/* Left Section */}
-        <div className="flex-1 text-center md:text-left">
+        <div className="flex-1 mt-10 text-center md:text-left">
           <h2 className="text-white font-poppins font-semibold text-[36px] sm:text-[48px] leading-tight">
             Focus on your vision, <br className="sm:block hidden" />{" "}
             we’ll handle the{" "}
