@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { features } from "../constants";
 import styles, { layout } from "../style";
 import Button from "./Button";
-import businessBg from "../assets/businessBg.jpg"; // ✅ your background image
+import businessBg from "../assets/businessBg.jpg";
 
 const FeatureCard = ({ icon, title, content, index }) => (
   <motion.div
@@ -64,8 +64,8 @@ function Business() {
             before.
           </p>
 
-          <div className="mt-10">
-            <Button styles="bg-gradient-to-r from-yellow-400 to-yellow-300 text-black font-semibold shadow-md hover:shadow-yellow-400/20 transition-all duration-300" />
+          <div className="mt-12 mb-2 relative" style={{ top: "-5px" }}>
+            <Button styles="shadow-md hover:shadow-yellow-400/20 transition-all duration-300" />
           </div>
         </div>
 
