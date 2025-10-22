@@ -44,7 +44,7 @@ function Business() {
       {/* Optional dark overlay for text contrast */}
       <div className="absolute inset-0 bg-black/75 backdrop-blur-[2px] z-[0]" />
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start justify-between gap-12 px-6 sm:px-12">
+      <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start justify-between gap-12 px-6 sm:px-12 text-center md:text-left">
 
         {/* Left Section — animated text */}
         <motion.div
@@ -75,7 +75,7 @@ function Business() {
         </motion.div>
 
         {/* Right Section - Features */}
-        <div className="flex-1 flex flex-col w-full max-w-[480px]">
+        <div className="flex-1 flex flex-col w-full max-w-[480px] items-center md:items-start">
           {features.map((feature, index) => (
             <FeatureCard key={feature.id} {...feature} index={index} />
           ))}
