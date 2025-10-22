@@ -6,9 +6,9 @@ import businessBg from "../assets/businessBg.jpg";
 
 const FeatureCard = ({ icon, title, content, index }) => (
   <motion.div
-    initial={{ opacity: 0, y: 30 }}
+    /* initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.15 }}
+    transition={{ duration: 0.5, delay: index * 0.15 }} */
     className={`flex flex-row p-6 rounded-[16px] ${
       index !== features.length - 1 ? "mb-6" : "mb-0"
     } feature-card border border-[#1a2b45]/40 backdrop-blur-md hover:bg-[#18243a]/30 transition-all duration-300`}
@@ -36,19 +36,24 @@ function Business() {
   return (
     <section
       id="features"
-      className={`${layout.section} relative overflow-hidden bg-cover bg-center bg-no-repeat rounded-[20px]`}
+      className={`${layout.section} relative overflow-hidden bg-cover bg-center bg-no-repeat rounded-[24px] border border-yellow-400/40 shadow-[0_0_20px_rgba(250,204,21,0.25)]`}
       style={{
         backgroundImage: `url(${businessBg})`
       }}
     >
       {/* Optional dark overlay for text contrast */}
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-[2px] z-[0]" />
+      <div className="absolute inset-0 bg-black/75 backdrop-blur-[2px] z-[0]" />
 
       <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start justify-between gap-12 px-6 sm:px-12">
 
-        {/* Left Section */}
-        <div className="flex-1 mt-10 text-center md:text-left">
-          <h2 className="text-white font-poppins font-semibold text-[36px] sm:text-[48px] leading-tight">
+        {/* Left Section — animated text */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className={`${styles.paragraph} max-w-[470px] mt-5 text-gray-300 leading-relaxed`}
+        >
+          <h2 className="text-white font-poppins font-semibold text-[36px] sm:text-[48px] leading-tight tracking-tight">
             Focus on your vision, <br className="sm:block hidden" />{" "}
             we’ll handle the{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">
@@ -64,10 +69,10 @@ function Business() {
             before.
           </p>
 
-          <div className="mt-12 mb-2 relative" style={{ top: "-5px" }}>
+          <div className="mt-10 mb-2 relative" style={{ top: "-5px" }}>
             <Button styles="shadow-md hover:shadow-yellow-400/20 transition-all duration-300" />
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Section - Features */}
         <div className="flex-1 flex flex-col w-full max-w-[480px]">

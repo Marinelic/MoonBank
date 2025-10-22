@@ -24,7 +24,7 @@ export default function App() {
 
       <Hero />
 
-      <div className={`bg-[#3f301b] ${styles.paddingX} ${styles.flexStart}`}>
+      <div className={`bg-[#070e14] ${styles.paddingX} ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Stats />
           <Business />
