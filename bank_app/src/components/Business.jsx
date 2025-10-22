@@ -75,7 +75,8 @@ function Business() {
         </motion.div>
 
         {/* Right Section - Features */}
-        <div className="flex-1 flex flex-col w-full max-w-[480px] items-center md:items-start">
+        <div 
+          className="flex-1 flex flex-col w-full max-w-[480px] items-center md:items-start md:ml-12 lg:ml-20 xl:ml-24">
           {features.map((feature, index) => (
             <FeatureCard key={feature.id} {...feature} index={index} />
           ))}

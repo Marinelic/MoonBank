@@ -2,37 +2,41 @@ import { motion } from "framer-motion";
 import styles, { layout } from "../style";
 import Button from "./Button";
 import Card from "../assets/card.jpg";
+import CardDealBg from "../assets/cardDealBg.jpg";
 
 const CardDeal = () => (
   <section
     id="card-deal"
-    className={`${layout.section} relative overflow-hidden bg-gradient-to-br from-[#0b0f1a] via-[#111827] to-[#1a2235] rounded-[24px] border border-yellow-400/40 shadow-[0_0_20px_rgba(250,204,21,0.25)] transition-all duration-500 hover:shadow-[0_0_30px_rgba(250,204,21,0.35)] px-6 py-10 sm:px-10 sm:py-16 mt-16 sm:mt-24 md:mt-32`}
+    className={`${layout.section} relative overflow-hidden bg-cover bg-center bg-no-repeat rounded-[24px] border border-yellow-400/40 shadow-[0_0_20px_rgba(250,204,21,0.25)] mt-16 sm:mt-24 md:mt-36 lg:mt-36 px-4 sm:px-12 py-12 sm:py-16`}
+    style={{
+      backgroundImage: `url(${CardDealBg})`,
+    }}
   >
-    {/* Subtle glowing overlay */}
-    <div className="absolute inset-0 bg-gradient-to-tr from-yellow-400/10 via-transparent to-cyan-400/10 blur-3xl opacity-40 z-[0]" />
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-black/55 backdrop-blur-[0px] z-[0]" />
 
-    <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start justify-between gap-8 sm:gap-12">
+    <div className="relative z-10 flex flex-col md:flex-row items-center md:items-center justify-between gap-8 md:gap-12">
       
-      {/* Text Section */}
-      <div className="flex-1 text-center md:text-left">
+      {/* LEFT — TEXT */}
+      <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left justify-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-white font-poppins font-semibold text-[28px] sm:text-[46px] leading-snug tracking-tight"
+          className="text-white font-poppins font-semibold text-[36px] sm:text-[48px] leading-tight"
         >
           Discover smarter{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">
             card solutions
           </span>{" "}
-          <br className="sm:block hidden" /> built for your lifestyle.
+          built for your lifestyle.
         </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className={`${styles.paragraph} max-w-[470px] mt-5 text-gray-300 leading-relaxed`}
+          className={`${styles.paragraph} max-w-[470px] mt-5 text-gray-300`}
         >
           Upgrade your finances with intelligent card management, instant
           rewards, and total control — all in one seamless experience powered by
@@ -43,18 +47,18 @@ const CardDeal = () => (
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-5 sm:mt-8"
+          className="mt-6 sm:mt-8 flex justify-center md:justify-start w-full"
         >
           <Button styles="shadow-md hover:shadow-yellow-400/20 transition-all duration-300" />
         </motion.div>
       </div>
 
-      {/* Image Section */}
-      <div className={`${layout.sectionImg} flex justify-center mt-8 sm:mt-0`}>
+      {/* RIGHT — IMAGE */}
+      <div className="flex-1 flex justify-center items-center mt-1 sm:mt-8 md:mt-0">
         <motion.img
           src={Card}
           alt="card"
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-[90%] sm:w-[100%] max-w-[480px] h-auto relative z-[5] rounded-[20px] shadow-xl hover:scale-[1.02] transition-transform duration-500"
