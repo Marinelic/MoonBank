@@ -3,7 +3,6 @@ import {
   Billing,
   Business,
   CardDeal,
-  Clients,
   CTA,
   Footer,
   Navbar,
@@ -31,7 +30,6 @@ export default function App() {
           <Billing />
           <CardDeal />
           <Testimonials />
-          <Clients />
           <CTA />
           <Footer />
         </div>
