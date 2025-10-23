@@ -1,6 +1,5 @@
 import styles from "../style";
 import CtaBg from "../assets/ctaBg.jpg";
-import Button from "./Button";
 
 const CTA = () => (
   <section

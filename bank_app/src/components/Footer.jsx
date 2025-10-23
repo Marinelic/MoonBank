@@ -1,34 +1,41 @@
 import styles from "../style";
-import { logo } from '../assets';
-import { footerLinks, socialMedia } from "../constants"; 
+import { logo } from "../assets";
+import { footerLinks, socialMedia } from "../constants";
 
 const Footer = () => (
-  <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
-    <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
-      <div className="flex-[1] flex flex-col justify-start mr-5">
+  <footer
+    className={`${styles.flexCenter} flex-col text-center md:text-left ${styles.paddingY} px-4 sm:px-8 md:px-12`}
+  >
+    {/* --- Top Section --- */}
+    <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-start mb-10 md:mb-8">
+      
+      {/* Logo + short text */}
+      <div className="flex flex-col items-center md:items-start mb-8 md:mb-0 md:mr-10">
         <img
           src={logo}
-          alt="hoobank"
-          className="w-[266px] h-[180px] object-contain"
+          alt="moonbank"
+          className="w-[150px] sm:w-[180px] md:w-[150px] h-auto object-contain mb-3 md:ml-10 ml-4"
         />
-        <p className={`${styles.paragraph} mt-1 max-w-[312px]`}>
-          A new way to make the payments easy, reliable and secure.
+        <p className="font-poppins font-normal text-[15px] sm:text-[16px] leading-[24px] text-gray-300 max-w-[320px] text-center md:text-left">
+          A new way to make payments — easy, secure, and reliable for everyone.
         </p>
       </div>
 
-      <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">
+      {/* Links Section */}
+      <div className="w-full md:flex-1 flex flex-wrap justify-center md:justify-end gap-8 sm:gap-10 md:gap-12">
         {footerLinks.map((footerlink) => (
-          <div key={footerlink.title} className={`flex flex-col ss:my-0 my-4 min-w-[150px]`}>
-            <h4 className="font-poppins font-medium text-[18px] leading-[27px] text-white">
+          <div
+            key={footerlink.title}
+            className="min-w-[140px] text-center md:text-left mt-6 md:mt-12"
+          >
+            <h4 className="font-poppins font-medium text-[16px] sm:text-[18px] text-white mb-2">
               {footerlink.title}
             </h4>
-            <ul className="list-none mt-4">
-              {footerlink.links.map((link, index) => (
+            <ul className="space-y-2">
+              {footerlink.links.map((link) => (
                 <li
                   key={link.name}
-                  className={`font-poppins font-normal text-[16px] leading-[24px] text-dimWhite cursor-pointer ${
-                    index !== footerlink.links.length - 1 ? "mb-4" : "mb-0"
-                  }`}
+                  className="font-poppins font-normal text-[16px] sm:text-[16px] text-gray-400 hover:text-yellow-300 cursor-pointer transition-colors duration-300"
                 >
                   {link.name}
                 </li>
@@ -39,27 +46,25 @@ const Footer = () => (
       </div>
     </div>
 
-    <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
-      <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white">
-        Copyright Ⓒ 2022 HooBank. All Rights Reserved.
+    {/* --- Bottom Section --- */}
+    <div className="w-full flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-6">
+      <p className="font-poppins text-[14px] sm:text-[15px] text-gray-400 leading-[22px] mb-4 md:mb-0 text-center md:text-left">
+        © {new Date().getFullYear()} MoonBank. All rights reserved.
       </p>
 
-      <div className="flex flex-row md:mt-0 mt-6">
-        {socialMedia.map((social, index) => (
+      <div className="flex flex-row justify-center md:justify-end space-x-5 sm:space-x-6">
+        {socialMedia.map((social) => (
           <img
             key={social.id}
             src={social.icon}
             alt={social.id}
-            className={`w-[21px] h-[21px] object-contain cursor-pointer ${
-              index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
-            }`}
+            className="w-[20px] sm:w-[22px] h-[20px] sm:h-[22px] object-contain cursor-pointer hover:opacity-80 transition-opacity duration-300"
             onClick={() => window.open(social.link)}
           />
         ))}
       </div>
     </div>
-  </section>
+  </footer>
 );
 
-
-export default Footer
+export default Footer;
