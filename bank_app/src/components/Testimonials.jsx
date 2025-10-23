@@ -3,23 +3,25 @@ import styles from "../style";
 import FeedbackCard from './FeedbackCard';
 
 const Testimonials = () => (
-    <section id="clients" className={`${styles.paddingY} ${styles.flexCenter} flex-col relative`}>
-     {/*  <div /> */}
+    <section 
+        id="clients" 
+        className={`${styles.paddingY} ${styles.flexCenter} flex-col relative mt-16 sm:mt-24 md:mt-36 lg:mt-36 px-4 sm:px-12`}>
 
-      <div className="w-full flex justify-between items-center md:flex-row flex-col sm:mb-16 mb-6 relative z-[1]">
-        <h2 className={styles.heading2}>
-        What People are <br className="sm:block hidden" /> saying about us
-      </h2>
+        <div className="w-full flex flex-col items-center text-center mb-12">
+          <h2 className="text-white font-poppins font-semibold text-[36px] sm:text-[48px] leading-tight mb-4">
+           What our clients say about{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">
+          MoonBank
+        </span>
+        </h2>
 
-      <div className="w-full md:mt-0 mt-6">
-        <p className={`${styles.paragraph} text-left max-w-[450px]`}>
-          Everything you need to accept card payments and grow your business
-          anywhere on the planet.
-        </p>
+          <p className={`${styles.paragraph} max-w-[600px] text-gray-300 leading-relaxed`}>
+            See how thousands of people around the world use MoonBank to simplify
+        their finances, save time, and grow their wealth securely.
+          </p>
       </div>
-      </div>
 
-      <div className="flex flex-wrap s,:justyfy-container relative z-[1]">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center mt-8">
         {feedback.map((card) => (
           <FeedbackCard key={card.id} {...card}/>
         ))}

@@ -47,28 +47,31 @@ export const feedback = [
   {
     id: "feedback-1",
     content:
-      "Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver.",
-    name: "Herman Jensen",
-    title: "Founder & Leader",
+      "MoonBank completely transformed the way I manage my business finances. The dashboard is intuitive, fast, and the analytics help me make smarter decisions every day.",
+    name: "Elena Rodriguez",
+    title: "Small Business Owner",
     img: people01,
   },
+
   {
     id: "feedback-2",
     content:
-      "Money makes your life easier. If you're lucky to have it, you're lucky.",
-    name: "Steve Mark",
-    title: "Founder & Leader",
+      "Finally, a banking app that feels built for the modern world. Transfers are instant, and I can track every transaction in real time — it’s pure peace of mind.",
+    name: "James Whitmore",
+    title: "Digital Entrepreneur",
     img: people02,
   },
+
   {
     id: "feedback-3",
     content:
-      "It is usually people in the money business, finance, and international trade that are really rich.",
-    name: "Kenn Gallagher",
-    title: "Founder & Leader",
+      "Security and simplicity rarely go together, but MoonBank nailed it. I feel confident managing my investments and personal finances all in one place.",
+    name: "Kevin Chen",
+    title: "Investor & Consultant",
     img: people03,
   },
 ];
+
 
 export const stats = [
   {

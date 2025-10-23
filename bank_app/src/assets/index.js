@@ -1,10 +1,8 @@
 import airbnb from "./airbnb.png";
 import binance from "./binance.png";
-
 import coinbase from "./coinbase.png";
 import dropbox from "./dropbox.png";
 import logo from "./logo.png";
-import quotes from "./quotes.svg";
 import robot from "./robot.png";
 import send from "./send.png";
 import shield from "./shield.png";
@@ -26,7 +24,6 @@ export {
   coinbase,
   dropbox,
   logo,
-  quotes,
   robot,
   send,
   shield,
