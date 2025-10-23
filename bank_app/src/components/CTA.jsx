@@ -23,9 +23,9 @@ const CTA = () => (
         Join{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">
           MoonBank
-        </span>
+        </span> 
         <br className="sm:block hidden" />
-        and take control of your finances.
+        {" "}and take control of your finances.
       </h2>
 
       <p className="font-poppins font-normal text-[16px] sm:text-[18px] leading-[30px] text-white/80 max-w-[470px] drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
