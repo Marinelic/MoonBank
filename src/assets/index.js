@@ -2,7 +2,7 @@ import logo from "./logo.png";
 import robot from "./robot.png";
 import send from "./send.png";
 import shield from "./shield.png";
-import star from "./Star.svg";
+import star from "./star.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
 import arrowUp from "./arrow-up.svg";
