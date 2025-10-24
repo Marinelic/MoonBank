@@ -47,7 +47,7 @@ const Footer = () => (
     </div>
 
     {/* --- Bottom Section --- */}
-    <div className="w-full flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-6">
+    <div className="w-full flex flex-col md:flex-row justify-between items-center border-t border-yellow-400 pt-6">
       <p className="font-poppins text-[14px] sm:text-[15px] text-gray-400 leading-[22px] mb-4 md:mb-0 text-center md:text-left">
         © {new Date().getFullYear()} MoonBank. All rights reserved.
       </p>

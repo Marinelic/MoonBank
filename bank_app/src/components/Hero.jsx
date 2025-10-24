@@ -57,7 +57,8 @@ const Hero = () => (
       </p>
 
       {/* Button */}
-       <div className="mt-10">
+       <div 
+            className="mt-10">
             <Button styles="bg-gradient-to-r from-yellow-400 to-yellow-300 text-black font-semibold shadow-md hover:shadow-yellow-400/20 transition-all duration-300" />
           </div>
     </motion.div>

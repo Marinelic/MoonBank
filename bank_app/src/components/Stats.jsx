@@ -13,7 +13,7 @@ const Stats = () => {
   return (
     <section
       ref={ref}
-      className={`${styles.flexCenter} flex flex-col sm:flex-row flex-wrap sm:mt-15 mt-16 sm:mb-20 mb-10 text-center sm:text-left`}
+      className={`${styles.flexCenter} flex flex-col sm:flex-row flex-wrap sm:mt-15 mt-10 sm:mb-20 mb-10 text-center sm:text-left`}
     >
       {stats.map((stat, index) => (
         <motion.div
