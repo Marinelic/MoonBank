@@ -3,7 +3,7 @@ import CtaBg from "../assets/ctaBg.jpg";
 
 const CTA = () => (
   <section
-    id="cta"
+    id="contact"
     className={`${styles.flexCenter} flex-col md:flex-row justify-between items-center text-center md:text-left 
     rounded-[24px] px-6 sm:px-12 py-10 sm:py-14 md:py-16 mt-10 sm:mt-24 md:mt-36 
     relative overflow-hidden`}

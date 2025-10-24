@@ -5,7 +5,6 @@ import Bill from "../assets/bill.jpg";
 
 const Billing = () => (
   <section
-    id="product"
     className={`${layout.sectionReverse} relative mt-16 sm:mt-24 md:mt-36 lg:mt-36 px-2 sm:px-12`}
   >
     <div className={`${layout.sectionImgReverse} flex justify-center`}>

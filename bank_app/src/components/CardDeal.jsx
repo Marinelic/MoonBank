@@ -6,7 +6,7 @@ import CardDealBg from "../assets/cardDealBg.jpg";
 
 const CardDeal = () => (
   <section
-    id="card-deal"
+    id="product"
     className={`${layout.section} relative overflow-hidden bg-cover bg-center bg-no-repeat rounded-[24px] border border-yellow-400/40 shadow-[0_0_20px_rgba(250,204,21,0.25)] mt-16 sm:mt-24 md:mt-36 lg:mt-36 px-4 sm:px-12 py-12 sm:py-16`}
     style={{
       backgroundImage: `url(${CardDealBg})`,

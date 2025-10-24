@@ -7,15 +7,15 @@ export const navLinks = [
   },
   {
     id: "features",
-    title: "Features",
+    title: "Why MoonBank",
   },
   {
     id: "product",
-    title: "Product",
+    title: "Solutions",
   },
   {
-    id: "clients",
-    title: "Clients",
+    id: "contact",
+    title: "Contact",
   },
 ];
 

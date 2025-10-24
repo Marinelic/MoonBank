@@ -1,10 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
 import call from "../assets/call.svg";
 
 function Navbar() {
   const [toggle, setToggle] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.6,
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => sections.forEach((section) => observer.unobserve(section));
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#0b1424]/65 backdrop-blur-md border-b border-[#1a2b45]/50">
@@ -17,14 +37,18 @@ function Navbar() {
           </h1>
         </div>
 
-        {/* Desktop Menu + Call */}
+        {/* Desktop Menu */}
         <div className="hidden sm:flex items-center space-x-8">
           <ul className="flex space-x-10">
             {navLinks.map((nav) => (
               <li key={nav.id}>
                 <a
                   href={`#${nav.id}`}
-                  className="text-gray-200 hover:text-yellow-400 transition-colors duration-300 font-medium text-[16px]"
+                  className={`transition-colors duration-300 font-medium text-[16px] ${
+                    activeSection === nav.id
+                      ? "text-yellow-400"
+                      : "text-gray-200 hover:text-yellow-400"
+                  }`}
                 >
                   {nav.title}
                 </a>
@@ -32,10 +56,10 @@ function Navbar() {
             ))}
           </ul>
 
-          {/* Call Icon (desktop) */}
+          {/* Call Icon */}
           <a
-            href="tel:+1234567890"
-            className="hidden sm:flex right-10 items-center text-white hover:text-yellow-400 transition-colors duration-300 ml-4"
+            href="#contact"
+            className="hidden sm:flex items-center text-white hover:text-yellow-400 transition-colors duration-300 ml-4"
           >
             <img src={call} alt="call" className="w-6 h-6" />
           </a>
@@ -59,7 +83,11 @@ function Navbar() {
                 <li key={nav.id}>
                   <a
                     href={`#${nav.id}`}
-                    className="text-gray-200 hover:text-yellow-400 text-[16px] font-medium transition-colors duration-300"
+                    className={`text-[16px] font-medium transition-colors duration-300 ${
+                      activeSection === nav.id
+                        ? "text-yellow-400"
+                        : "text-gray-200 hover:text-yellow-400"
+                    }`}
                     onClick={() => setToggle(false)}
                   >
                     {nav.title}
@@ -68,9 +96,8 @@ function Navbar() {
               ))}
             </ul>
 
-            {/* Call button on mobile */}
             <a
-              href="tel:+1234567890"
+              href="#contact"
               className="mt-4 flex items-center justify-center text-yellow-400 hover:text-yellow-300"
             >
               <img src={call} alt="call" className="w-6 h-6 mr-2" /> Call Us

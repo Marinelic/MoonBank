@@ -123,3 +123,11 @@
   background: rgb(255, 251, 0);
   filter: blur(750px);
 }
+
+#home,
+#features,
+#product,
+#contact {
+  scroll-margin-top: 150px;
+}
+

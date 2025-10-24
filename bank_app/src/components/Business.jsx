@@ -6,10 +6,10 @@ import businessBg from "../assets/businessBg.jpg";
 
 const FeatureCard = ({ icon, title, content, index }) => (
   <motion.div
-    /* initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.15 }} */
-    className={`flex flex-row p-6 rounded-[16px] ${
+      /* initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.15 }} */
+      className={`flex flex-row p-6 rounded-[16px] ${
       index !== features.length - 1 ? "mb-6" : "mb-0"
     } feature-card border border-[#1a2b45]/40 backdrop-blur-md hover:bg-[#18243a]/30 transition-all duration-300`}
   >
