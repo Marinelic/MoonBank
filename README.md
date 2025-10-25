@@ -1,12 +1,20 @@
-# React + Vite
+MoonBank is a modern and responsive digital banking web app built with React, Vite, and Tailwind CSS.
+It delivers a sleek user experience with smooth animations, elegant design, and a fully functional contact form powered by EmailJS.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+💰 Clean, professional banking UI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📱 Fully responsive on all devices
 
-## Expanding the ESLint configuration
+⚡ Fast performance with Vite
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+💬 Working contact form via EmailJS
+
+🎨 Subtle animations (Framer Motion)
+
+
+TECH STACK
+
+React • Vite • Tailwind CSS • Framer Motion • EmailJS
+
+Live Demo - https://moon-bank-se1v.vercel.app/
