@@ -2,36 +2,50 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "../style";
 import CtaBg from "../assets/ctaBg.jpg";
+import Swal from "sweetalert2";
 
 const CTA = () => {
-  // 1️⃣ Create a form reference
   const formRef = useRef();
 
-  // 2️⃣ Handle send email
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",     // <-- Replace with your EmailJS Service ID
-        "YOUR_TEMPLATE_ID",    // <-- Replace with your Template ID
-        formRef.current,       // This references your actual <form>
-        "YOUR_PUBLIC_KEY"      // <-- Replace with your EmailJS Public Key
+        "service_kddj81h",
+        "template_bsputln",   
+        formRef.current,     
+        "Er5LdxIC8YQLHjyOB"    
+
       )
       .then(
-        (result) => {
-          console.log("✅ Email sent successfully!", result.text);
-          alert("Your message has been sent! 💛");
-          e.target.reset();
-        },
-        (error) => {
-          console.log("❌ Error sending email:", error.text);
-          alert("Something went wrong. Please try again.");
-        }
-      );
-  };
+      (result) => {
+        console.log("✅ Email sent successfully!", result.text);
+        Swal.fire({
+          title: "Message Sent!",
+          text: "Thank you for contacting us. We'll get back to you soon 💛",
+          icon: "success",
+          confirmButtonColor: "#facc15", // yellow
+          background: "#0b1424",
+          color: "#fff",
+          confirmButtonText: "OK",
+        });
+        e.target.reset();
+      },
+      (error) => {
+        console.log("❌ Error sending email:", error.text);
+        Swal.fire({
+          title: "Oops...",
+          text: "Something went wrong. Please try again later.",
+          icon: "error",
+          confirmButtonColor: "#f87171", // red
+          background: "#0b1424",
+          color: "#fff",
+        });
+      }
+    );
+};
 
-  // 3️⃣ Return JSX
   return (
     <section
       id="contact"
@@ -72,26 +86,31 @@ const CTA = () => {
         </h3>
 
         <form ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-4">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+         <div className="flex flex-col sm:flex-row sm:items-center gap-3 w-full">
+          <div className="flex-1 w-full">
             <input
               type="text"
-              name="first_name"
+              name="user_name"
               placeholder="First Name"
               required
-              className="flex-1 py-3 px-4 rounded-[12px] bg-white/10 border border-white/20 text-white placeholder:text-gray-300 focus:ring-2 focus:ring-yellow-400"
-            />
-            <input
-              type="text"
-              name="last_name"
-              placeholder="Last Name"
-              required
-              className="flex-1 py-3 px-4 rounded-[12px] bg-white/10 border border-white/20 text-white placeholder:text-gray-300 focus:ring-2 focus:ring-yellow-400"
+              className="w-full py-3 px-4 rounded-[12px] bg-white/10 border border-white/20 text-white placeholder:text-gray-300 focus:ring-2 focus:ring-yellow-400"
             />
           </div>
+          <div className="flex-1 w-full">
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Last Name"
+              required
+              className="w-full py-3 px-4 rounded-[12px] bg-white/10 border border-white/20 text-white placeholder:text-gray-300 focus:ring-2 focus:ring-yellow-400"
+            />
+          </div>
+        </div>
+
 
           <input
             type="email"
-            name="email"
+            name="user_email"
             placeholder="Email Address"
             required
             className="py-3 px-4 rounded-[12px] bg-white/10 border border-white/20 text-white placeholder:text-gray-300 focus:ring-2 focus:ring-yellow-400"
@@ -119,6 +138,9 @@ const CTA = () => {
           >
             Submit
           </button>
+
+          <input type="hidden" name="project" value="MoonBank" />
+
         </form>
       </div>
     </section>
